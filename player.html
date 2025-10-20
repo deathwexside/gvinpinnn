@@ -4,7 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gvinpin — стрим</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Сброс и базовые стили */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #eee;
+            line-height: 1.5;
+            user-select: none;
+            position: relative;
+            background: linear-gradient(-45deg, #1c1c2a, #2a2a3d, #1c1c2a, #2a2a3d);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* Навигация */
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            background: rgba(17,17,17,0.8);
+        }
+        .nav__link {
+            margin: 0 15px;
+            padding: 8px 18px;
+            color: white;
+            border-radius: 8px;
+            background: #6c63ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .nav__link:hover { background: #5750d6; }
+
+        /* Плеер */
+        .player {
+            flex: 1; /* занимает всё доступное пространство */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 35px 20px;
+            text-align: center;
+        }
+        .player__embed {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            border: 2px solid #ff4d88;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255,77,136,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .player__embed:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 35px rgba(255,77,136,0.7);
+        }
+        .player__info { 
+            margin-top: 15px; 
+            color: #ff85b3; 
+            font-size: 1rem;
+        }
+
+        /* Футер */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(17,17,17,0.8);
+            color: #ccc;
+            flex-shrink: 0;
+        }
+
+        /* Адаптив */
+        @media (max-width: 600px) {
+            .player__embed { aspect-ratio: auto; height: 240px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -16,11 +104,11 @@
 <section class="player">
     <div class="player__embed">
         <iframe
-                src="https://player.twitch.tv/?channel=gvinpinnn&parent=https://gvinpinnn.netlify.app"
-                height="480"
-                width="100%"
-                allowfullscreen
-                draggable="false">
+            src="https://player.twitch.tv/?channel=gvinpinnn&parent=gvinpinnn.netlify.app"
+            height="480"
+            width="100%"
+            allowfullscreen
+            draggable="false">
         </iframe>
     </div>
     <p class="player__info">Сейчас в эфире на Twitch: <strong>gvinpinnn</strong></p>
@@ -28,8 +116,5 @@
 
 <footer class="footer">💜 Сделано с любовью для gvinpin</footer>
 
-<script src="script.js"></script>
 </body>
 </html>
-
-
