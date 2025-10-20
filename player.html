@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gvinpin — стрим</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+    <a href="index.html" class="nav__link">Главная</a>
+    <a href="player.html" class="nav__link">Смотреть стрим</a>
+</header>
+
+<section class="player">
+    <div class="player__embed">
+        <iframe
+                src="https://player.twitch.tv/?channel=gvinpinnn&parent=localhost"
+                height="480"
+                width="100%"
+                allowfullscreen
+                draggable="false">
+        </iframe>
+    </div>
+    <p class="player__info">Сейчас в эфире на Twitch: <strong>gvinpinnn</strong></p>
+</section>
+
+<footer class="footer">
+    <p>💜 Сделано с любовью для gvinpin</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
